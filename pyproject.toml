@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "remote-fleet-control"
+version = "0.1.0"
+description = "Remote execution agent, signed command dispatcher, multiplexed reverse tunnel, and audit trail"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+    { name = "aipd506" }
+]
+keywords = ["fleet", "remote-execution", "tunnel", "audit", "security", "cli"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: System Administrators",
+    "Intended Audience :: Information Technology",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: System :: Systems Administration",
+    "Topic :: Security",
+]
+dependencies = []
+
+[project.scripts]
+fleetctl = "fleetctl.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["fleetctl*"]
